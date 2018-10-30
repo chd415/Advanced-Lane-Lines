@@ -115,10 +115,13 @@ I implemented this step through function `draw_lane()`.  Here is an example of m
 
 Here's a [video result](./output_video/project_output.mp4)
 
-And videos for challenge and harder challenge:
+And videos for challange one:
 
-[challenge video result](./output_video/challenge_output.mp4)
-[harder challenge video result](./output_video/harder_challenge_video.mp4)
+[challange video result](./output_video/challenge_output.mp4)
+
+And harder challange one:
+
+[harder challange video result](./output_video/harder_challenge_output.mp4)
 
 ---
 
