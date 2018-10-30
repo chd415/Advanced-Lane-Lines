@@ -1,3 +1,5 @@
+# **Advanced Lane Lines**
+
 ## Writeup Template
 
 ### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
@@ -47,20 +49,21 @@ In this project, I assume that the chessboard are fixed as 2D so that z=0. So ba
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![Undistorted chessboard][./output_images/Undistorted chessboard.jpg]
+<img src="output_images/Undistorted chessboard.jpg" width="480" />
+
 
 ### Pipeline (single images)
 
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![test4][./test_images/test4.jpg]
+<img src="test_images/test4.jpg" width="480" />
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I used a combination of color, gradient and direction thresholds to generate a binary image. Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![Applied thresholds][./output_images/Applied thre.jpg]
+<img src="output_images/Applied thre.jpg" width="480" />
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -79,17 +82,19 @@ dst = np.float32([(320,720),
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![warped][./output_images/warped.jpg]
+<img src="output_images/warped.jpg" width="480" />
+
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial with functions `find_lane_pixels()` and `fit_polynomial()`:
 
-![fit line][./output_images/fit line.jpg]
+<img src="output_images/fit line.jpg" width="480" />
 
 Then I tried to find the fit based on the previous fit with the function `polyfit_prev()`:
 
-![fit pre][./output_images/fit pre.jpg]
+<img src="output_images/fit pre.jpg" width="480" />
+
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -99,7 +104,8 @@ I did this with function `radius()`
 
 I implemented this step through function `draw_lane()`.  Here is an example of my result on a test image:
 
-![draw lane][./output_images/draw lane.jpg]
+<img src="output_images/draw lane.jpg" width="480" />
+
 
 ---
 
